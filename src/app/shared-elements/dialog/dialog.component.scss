@@ -1,0 +1,61 @@
+@import '../../../assets/scss/breakpoints_mixin';
+
+.cdk-overlay-pane.dialog-responsive {
+    width: 600px;
+}
+
+.container {
+    background: white;
+    width: 100%;
+    height: 100%;
+    padding: 16px;
+    box-sizing: border-box;
+}
+
+span {
+    padding-right: 12px;
+    color: gray;
+}
+
+.mat-dialog-actions {
+    justify-content: flex-end;
+}
+
+.mat-dialog-content {
+    max-height: 100%;
+}
+
+.container {
+    position: relative;
+}
+
+::ng-deep {
+    @include media_768 {
+        .cdk-overlay-pane.dialog-responsive {
+            max-width: 100vh !important;
+            width: 100% !important;
+            max-height: 100vh !important;
+            position: fixed !important;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+            .mat-dialog-container {
+                padding: 0;
+            }
+
+            .mat-dialog-content {
+                margin-bottom: 70px;
+            }
+
+            .mat-dialog-actions {
+                position: absolute;
+                bottom: 16px;
+                left: 16px;
+                right: 16px;
+                margin-bottom: -12px;
+            }
+        }
+    }
+}

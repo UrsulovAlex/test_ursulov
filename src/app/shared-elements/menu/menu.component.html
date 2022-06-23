@@ -1,0 +1,12 @@
+<mat-selection-list [multiple]="false">
+    <ng-container >
+        <mat-list-option *ngFor="let item of menu"
+            [routerLink]="item?.router" 
+            routerLinkActive="router-link-active" 
+            [title]="item?.name">
+            {{item?.name}}
+        </mat-list-option>
+    </ng-container>
+    <mat-divider></mat-divider>
+</mat-selection-list>
+

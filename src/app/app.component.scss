@@ -1,0 +1,7 @@
+@import '../assets/scss/breakpoints_mixin';
+
+@include media_768 {
+    mat-drawer {
+        display: none;
+    }
+}

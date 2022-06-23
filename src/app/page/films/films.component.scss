@@ -1,0 +1,36 @@
+@import '../../../assets/scss/breakpoints_mixin';
+
+.container {
+    padding: 16px;
+    min-height: 100vh;
+}
+
+.mat-row {
+    cursor: pointer;
+
+    &:hover {
+        background: lightgrey;
+    }
+}
+
+.description__data {
+    color: gray;
+
+    span {
+        font-weight: 500;
+    }
+}
+
+th.mat-header-cell,
+td.mat-cell {
+    padding: 8px;
+}
+
+@include media_768 {
+    .container__table {
+        overflow: scroll;
+        table {
+            width: 992px;
+        }
+    }
+}

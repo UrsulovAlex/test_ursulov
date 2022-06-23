@@ -1,0 +1,20 @@
+<app-loading *ngIf="loading"></app-loading>
+<section class="grid">
+    <ng-container *ngIf="!loading">
+        <mat-card *ngFor="let film of filmData">
+            <mat-card-header>
+                <mat-card-title>{{film?.title}} </mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <p>
+                    {{film?.opening_crawl}}
+                </p>
+                <mat-card-subtitle>Producer: {{film?.producer}}</mat-card-subtitle>
+                <mat-card-subtitle>{{film?.release_date | date: 'dd.MM.YYYY'}}</mat-card-subtitle>
+            </mat-card-content>
+            <mat-card-actions align="end">
+                <button (click)="showFilm(film?.title)" mat-button color="primary">See more</button>
+            </mat-card-actions>
+        </mat-card>
+    </ng-container>
+</section>

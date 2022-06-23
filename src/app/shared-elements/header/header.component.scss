@@ -1,0 +1,17 @@
+@import '../../../assets/scss/breakpoints_mixin';
+
+.logout {
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.menu {
+    display: none;
+}
+
+@include media_768 {
+    .menu {
+        display: block;
+        margin-left: 8px;
+    }
+}

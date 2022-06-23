@@ -1,0 +1,16 @@
+<mat-toolbar color="primary">
+    <span *ngIf="userName?.length">{{userName}}</span>
+    <ng-content></ng-content>
+    <button (click)="logOut()" class="logout" mat-icon-button>
+        <mat-icon>logout</mat-icon>
+    </button>
+    <button class="menu" mat-icon-button [matMenuTriggerFor]="beforeMenu">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #beforeMenu="matMenu" xPosition="before">
+        <button 
+            [routerLink]="['/dashboard']" 
+            routerLinkActive="router-link-active" 
+            mat-menu-item>Dashboard</button>
+    </mat-menu>
+</mat-toolbar>

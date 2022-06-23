@@ -1,0 +1,1 @@
+export type typeParams = 'people' | 'starship' | 'planets';

@@ -1,0 +1,87 @@
+<section class="container">
+  <app-loading *ngIf="loading"></app-loading>
+    <h1 mat-dialog-title>
+      <ng-container [ngSwitch]="data.template">
+        <ng-container *ngSwitchCase="'people'">Human</ng-container>
+        <ng-container *ngSwitchCase="'starship'">Starship</ng-container>
+        <ng-container *ngSwitchCase="'planets'">Planet</ng-container>
+      </ng-container>
+    </h1>
+    <div mat-dialog-content>
+      <ng-container [ngSwitch]="data.template">
+          <ng-container *ngSwitchCase="'people'">
+            <p class="mat-body"><span class="mat-small">name</span>{{data?.data?.name}}</p>
+            <p class="mat-body"><span class="mat-small">berth year</span>{{data?.data?.birth_year}}</p>
+            <p class="mat-body"><span class="mat-small">eye color</span>{{data?.data?.eye_color}}</p> 
+            <p class="mat-body"><span class="mat-small">gender</span>{{data?.data?.gender}}</p>
+            <p class="mat-body"><span class="mat-small">hair color</span>{{data?.data?.hair_color}}</p>
+            <p class="mat-body"><span class="mat-small">height</span>{{data?.data?.height}}</p>
+            <p class="mat-body"><span class="mat-small">mass</span>{{data?.data?.mass}}</p>
+            <p class="mat-body"><span class="mat-small">skin color</span>{{data?.data?.skin_color}}</p>
+            <p class="mat-body"><span class="mat-small">homeworldr</span>{{homeWorldr}}</p>
+            <ul *ngIf="listFilms.length">
+              <li><span class="mat-small">films</span></li>
+              <li *ngFor="let items of listFilms">{{items}}</li>
+            </ul>
+            <ul *ngIf="listSpacies.length">
+              <li><span class="mat-small">species</span></li>
+              <li *ngFor="let items of listSpacies">{{items}}</li>
+            </ul>
+            <ul *ngIf="listStarships.length">
+              <li><span class="mat-small">starships</span></li>
+              <li *ngFor="let items of listStarships">{{items}}</li>
+            </ul>
+            <ul *ngIf="listVihicles.length">
+              <li><span class="mat-small">vehicles</span></li>
+              <li *ngFor="let items of listVihicles">{{items}}</li>
+            </ul>
+          </ng-container>
+          <ng-container *ngSwitchCase="'planets'">
+            <p class="mat-body"><span class="mat-small">name</span>{{data?.data?.name}}</p>
+            <p class="mat-body"><span class="mat-small">diameter</span>{{data?.data?.diameter}}</p>
+            <p class="mat-body"><span class="mat-small">rotation period</span>{{data?.data?.rotation_period}}</p>
+            <p class="mat-body"><span class="mat-small">orbital period</span>{{data?.data?.orbital_period}}</p>
+            <p class="mat-body"><span class="mat-small">gravity</span>{{data?.data?.gravity}}</p>
+            <p class="mat-body"><span class="mat-small">population</span>{{data?.data?.population}}</p>
+            <p class="mat-body"><span class="mat-small">climate</span>{{data?.data?.climate}}</p>
+            <p class="mat-body"><span class="mat-small">terrain</span>{{data?.data?.terrain}}</p>
+            <p class="mat-body"><span class="mat-small">surface water</span>{{data?.data?.surface_water}}</p>
+            <ul *ngIf="listPeople.length">
+              <li><span class="mat-small">residents</span></li>
+              <li *ngFor="let item of listPeople">{{item}}</li>
+            </ul>
+            <ul *ngIf="listFilms.length">
+              <li><span class="mat-small">films</span></li>
+              <li *ngFor="let item of listFilms">{{item}}</li>
+            </ul>
+          </ng-container>
+          <ng-container *ngSwitchCase="'starship'">
+            <p class="mat-body"><span class="mat-small">name</span>{{data?.data?.name}}</p>
+            <p class="mat-body"><span class="mat-small">model</span>{{data?.data?.model}}</p>
+            <p class="mat-body"><span class="mat-small">starship class</span>{{data?.data?.starship_class}}</p>
+            <p class="mat-body"><span class="mat-small">manufacturer</span>{{data?.data?.manufacturer}}</p>
+            <p class="mat-body"><span class="mat-small">cost in credits</span>{{data?.data?.cost_in_credits}}</p>
+            <p class="mat-body"><span class="mat-small">length</span>{{data?.data?.length}}</p>
+            <p class="mat-body"><span class="mat-small">crew</span>{{data?.data?.crew}}</p>
+            <p class="mat-body"><span class="mat-small">passengers</span>{{data?.data?.passengers}}</p>
+            <p class="mat-body"><span class="mat-small">max atmosphering speed</span>{{data?.data?.max_atmosphering_speed}}</p>
+            <p class="mat-body"><span class="mat-small">hyperdrive_rating</span>{{data?.data?.hyperdrive_rating}}</p>
+            <p class="mat-body"><span class="mat-small">MGLT</span>{{data?.data?.MGLT}}</p>
+            <p class="mat-body"><span class="mat-small">cargo capacity</span>{{data?.data?.cargo_capacity}}</p>
+            <p class="mat-body"><span class="mat-small">consumables</span>{{data?.data?.consumables}}</p>
+            <ul *ngIf="listPeople.length">
+              <li><span class="mat-small">pilots</span></li>
+              <li *ngFor="let item of listPeople">{{item}}</li>
+            </ul>
+            <ul *ngIf="listFilms.length">
+              <li><span class="mat-small">films</span></li>
+              <li *ngFor="let item of listFilms">{{item}}</li>
+            </ul>
+          </ng-container>
+      </ng-container>
+    </div>
+    <div mat-dialog-actions>
+      <button mat-raised-button [mat-dialog-close] cdkFocusInitial
+        color="warn">Close</button>
+    </div>
+</section>

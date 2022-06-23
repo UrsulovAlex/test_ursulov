@@ -1,0 +1,22 @@
+@import '../../../assets/scss/breakpoints_mixin';
+
+.grid {
+    padding: 16px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    align-content: start;
+    height: calc(100vh - 105px);
+}
+
+@include media_992 {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@include media_768 {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
