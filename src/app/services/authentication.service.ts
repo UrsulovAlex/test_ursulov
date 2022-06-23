@@ -40,7 +40,6 @@ export class AuthenticationService {
 
   sessionCheck(): void {
     let getToken: IJwtToken = JSON.parse(localStorage.getItem('Bearer') || '');
-    console.log('getToken', getToken);
     of(getToken).pipe(
       delay(1000),
       repeat(),
